@@ -1,0 +1,17 @@
+.shortWhyd {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .shortWhyd {
+    display: inline-block;
+  }
+  .longWhyd {
+    display: none;
+  }
+}
+
+.whidNavbar {
+  user-select: none;
+  background-color: #303030;
+}
