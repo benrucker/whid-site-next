@@ -1,7 +1,7 @@
-import { VideoPreviewCard } from "@/components/VideoPreviewCard";
-import styles from "./page.module.scss";
 import classNames from "classnames";
 import Container from "react-bootstrap/esm/Container";
+import { VideoPreviewCard } from "./components/VideoPreviewCard";
+import styles from "./page.module.scss";
 
 export default function Home() {
   return (

@@ -1,7 +1,7 @@
+import { WhidNavbar } from "@/app/components/WhidNavbar";
 import type { Metadata, Viewport } from "next";
-import "./globals.scss";
 import React from "react";
-import { WhidNavbar } from "@/components/WhidNavbar";
+import "./globals.scss";
 
 export const metadata: Metadata = {
   title: "what have i done",

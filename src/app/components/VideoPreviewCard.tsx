@@ -1,6 +1,6 @@
 "use client";
+import Link from "next/link";
 import React from "react";
-import Anchor from "react-bootstrap/esm/Anchor";
 import Card from "react-bootstrap/esm/Card";
 import Ratio from "react-bootstrap/esm/Ratio";
 
@@ -36,10 +36,7 @@ export const VideoPreviewCard = React.memo<Props>(function VideoPreviewCardFn({
           Sorry, your browser doesn&apos;t support embedded videos.
         </video>
       </Ratio>
-      <Anchor
-        href={videoPlayerLink}
-        className="text-reset text-decoration-none"
-      >
+      <Link href={videoPlayerLink} className="text-reset text-decoration-none">
         <div id="gallery-card" className="card-body">
           <h5 className="card-title text-truncate pb-1 mb-0">{title}</h5>
           {releaseDate && (
@@ -51,7 +48,7 @@ export const VideoPreviewCard = React.memo<Props>(function VideoPreviewCardFn({
             <small className="text-muted">{description}</small>
           </h6>
         </div>
-      </Anchor>
+      </Link>
     </Card>
   );
 });

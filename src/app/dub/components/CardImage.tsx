@@ -1,7 +1,7 @@
+import { NextImage } from "@/components/NextImage";
+import classNames from "classnames";
 import React from "react";
 import { Ratio } from "react-bootstrap";
-import { NextImage } from "./NextImage";
-import classNames from "classnames";
 
 interface Props extends Omit<React.ComponentProps<typeof NextImage>, "ratio"> {
   readonly ratio: React.ComponentProps<typeof NextImage>["ratio"];
