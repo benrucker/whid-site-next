@@ -1,3 +1,4 @@
+import styles from "./page.module.scss";
 import { Alert, Container } from "react-bootstrap";
 import { CATALOG } from "./catalog";
 import { FeaturedContentCard } from "./components/FeaturedContentCard";
@@ -17,7 +18,7 @@ export default async function Dub({ searchParams }: Props) {
     ((await searchParams)?.season as SeasonName) ?? SeasonName.SEASON_1;
 
   return (
-    <div id="galleryApp">
+    <>
       {videoAlert != null && (
         <Container>
           <Alert variant="danger" className="fade show m-2" role="alert">
@@ -37,7 +38,7 @@ export default async function Dub({ searchParams }: Props) {
         </>
       )}
 
-      <DubEpisodes season={activeSeason} />
-    </div>
+      <DubEpisodes className={styles.episodes} season={activeSeason} />
+    </>
   );
 }

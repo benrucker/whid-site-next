@@ -32,6 +32,7 @@ export const DubEpisodes = React.memo<Props>(function DubEpisodesFn({
                   })}
                   href={`/dub?season=${otherSeasonName}`}
                   prefetch={true}
+                  scroll={false}
                 >
                   {seasonData.name}
                 </Link>
