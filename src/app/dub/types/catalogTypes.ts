@@ -27,12 +27,26 @@ interface BaseEpisode {
   readonly title: string;
 }
 
-interface WithParts {
+export interface WithParts {
   readonly parts?: ReadonlyArray<Part>;
 }
 
-interface WithChapters {
+export interface WithChapters {
   readonly chapters?: ReadonlyArray<Chapter>;
+}
+
+export function withParts(episode: Episode): Episode & WithParts {
+  return {
+    parts: undefined,
+    ...episode,
+  };
+}
+
+export function withChapters(episode: Episode): Episode & WithChapters {
+  return {
+    chapters: undefined,
+    ...episode,
+  };
 }
 
 export interface Part {

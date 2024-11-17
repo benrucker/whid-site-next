@@ -56,10 +56,14 @@ export function getEpisodeFromList(
   throw new VideoIDError("Video ID not found in catalog");
 }
 
-export function constructWatchURL(ep: Episode, season: SeasonName) {
-  return "/dub/" + season + "/" + ep.id + "";
+export function constructWatchURL(ep: Episode, seasonName: SeasonName) {
+  return "/dub/" + seasonName + "/" + ep.id + "";
 }
 
-export function constructThumbnailURL(ep: Episode, season: SeasonName) {
-  return "https://12b3.pw/whid/thumbnails/" + season + "/" + ep.id + ".png";
+export function constructVideoURL(episodeId: string, seasonName: SeasonName) {
+  return "https://12b3.pw/whid/videos/" + seasonName + "/" + episodeId + ".mp4";
+}
+
+export function constructThumbnailURL(ep: Episode, seasonName: SeasonName) {
+  return "https://12b3.pw/whid/thumbnails/" + seasonName + "/" + ep.id + ".png";
 }
