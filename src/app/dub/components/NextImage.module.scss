@@ -1,0 +1,4 @@
+.image {
+  // Using important because Next uses raw element styles, not CSS, that we have to override
+  height: 100% !important;
+}

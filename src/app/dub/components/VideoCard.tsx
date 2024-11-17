@@ -3,24 +3,21 @@ import React from "react";
 import { Episode } from "../types/catalogTypes";
 import { constructThumbnailURL, constructWatchURL } from "../utils/utils";
 import Link from "next/link";
-import {
-  Card,
-  CardBody,
-  CardSubtitle,
-  CardTitle,
-  Ratio,
-} from "react-bootstrap";
+import { Card, CardBody, CardSubtitle, CardTitle } from "react-bootstrap";
 import { SeasonName } from "../types/SeasonName";
 import classNames from "classnames";
+import { CardImage } from "./CardImage";
 
 interface Props extends WithClassName {
   readonly episode: Episode;
+  readonly imageLoading?: React.ComponentProps<typeof CardImage>["loading"];
   readonly season: SeasonName;
 }
 
 export const VideoCard = React.memo<Props>(function VideoCardFn({
   className,
   episode,
+  imageLoading,
   season,
 }) {
   return (
@@ -29,13 +26,13 @@ export const VideoCard = React.memo<Props>(function VideoCardFn({
       className={classNames("text-reset text-decoration-none", className)}
     >
       <Card>
-        <Ratio aspectRatio="16x9">
-          <img
-            src={constructThumbnailURL(episode, season)}
-            className="card-img-top"
-            alt={episode.title}
-          />
-        </Ratio>
+        <CardImage
+          alt={episode.title}
+          layout="responsive"
+          loading={imageLoading}
+          ratio="16x9"
+          src={constructThumbnailURL(episode, season)}
+        />
         <CardBody>
           <CardTitle as="h5" className="text-truncate pb-1 mb-0">
             {episode.title}
