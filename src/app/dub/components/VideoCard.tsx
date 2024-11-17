@@ -1,11 +1,11 @@
 import { WithClassName } from "@/types/WithClassName";
-import React from "react";
-import { Episode } from "../types/catalogTypes";
-import { constructThumbnailURL, constructWatchURL } from "../utils/utils";
-import Link from "next/link";
-import { Card, CardBody, CardSubtitle, CardTitle } from "react-bootstrap";
-import { SeasonName } from "../types/SeasonName";
 import classNames from "classnames";
+import Link from "next/link";
+import React from "react";
+import { Card, CardBody, CardSubtitle, CardTitle } from "react-bootstrap";
+import { Episode } from "../types/catalogTypes";
+import { SeasonName } from "../types/SeasonName";
+import { constructThumbnailURL, constructWatchURL } from "../utils/utils";
 import { CardImage } from "./CardImage";
 
 interface Props extends WithClassName {
@@ -28,7 +28,6 @@ export const VideoCard = React.memo<Props>(function VideoCardFn({
       <Card>
         <CardImage
           alt={episode.title}
-          layout="responsive"
           loading={imageLoading}
           ratio="16x9"
           src={constructThumbnailURL(episode, season)}

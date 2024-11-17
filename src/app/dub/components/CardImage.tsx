@@ -19,6 +19,7 @@ export const CardImage = React.memo<Props>(function CardImageFn({
       <NextImage
         className={classNames("card-img-top", className)}
         ratio={ratio}
+        layout="responsive"
         {...props}
       />
     </Ratio>

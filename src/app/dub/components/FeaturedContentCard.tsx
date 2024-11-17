@@ -1,17 +1,11 @@
-import styles from "./FeaturedContentCard.module.scss";
+import classNames from "classnames";
+import Link from "next/link";
 import React from "react";
+import { CardBody, CardText, CardTitle, Col, Row } from "react-bootstrap";
 import { Episode, FeaturedVideo } from "../types/catalogTypes";
 import { constructThumbnailURL, constructWatchURL } from "../utils/utils";
-import Link from "next/link";
-import {
-  CardBody,
-  CardText,
-  CardTitle,
-  Col,
-  Ratio,
-  Row,
-} from "react-bootstrap";
-import classNames from "classnames";
+import { CardImage } from "./CardImage";
+import styles from "./FeaturedContentCard.module.scss";
 
 interface Props {
   readonly content: Episode & FeaturedVideo;
@@ -31,9 +25,11 @@ export const FeaturedContentCard = React.memo<Props>(
       >
         <Row className="row g-0">
           <Col lg={thumbnailGridSize}>
-            <Ratio className="ratio ratio-16x9">
-              <img src={thumbnail} alt="..." />
-            </Ratio>
+            <CardImage
+              alt={`Thumbnail for ${content.title}`}
+              ratio="16x9"
+              src={thumbnail}
+            />
           </Col>
           <Col lg={12 - thumbnailGridSize}>
             <CardBody>
