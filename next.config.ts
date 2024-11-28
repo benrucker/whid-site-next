@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
     // This will eventually be fixed by the Next team
     silenceDeprecations: ["legacy-js-api"],
   },
+  output: "export",
 };
 
 export default nextConfig;
