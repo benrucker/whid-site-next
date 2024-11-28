@@ -1,21 +1,14 @@
+import { Suspense } from "react";
 import { Alert, Container } from "react-bootstrap";
 import { CATALOG } from "./catalog";
 import { DubEpisodes } from "./components/DubEpisodes";
 import { FeaturedEpisodeCard } from "./components/FeaturedEpisodeCard";
 import styles from "./page.module.scss";
-import { SeasonName } from "./types/SeasonName";
 import { getFeaturedVideo } from "./utils/utils";
 
-interface Props {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}
-
-export default async function Dub({ searchParams }: Props) {
+export default async function Dub() {
   const featuredVideo = getFeaturedVideo(CATALOG);
   const videoAlert = null;
-
-  const activeSeason =
-    ((await searchParams)?.season as SeasonName) ?? SeasonName.SEASON_1;
 
   return (
     <>
@@ -38,7 +31,9 @@ export default async function Dub({ searchParams }: Props) {
         </>
       )}
 
-      <DubEpisodes className={styles.episodes} season={activeSeason} />
+      <Suspense>
+        <DubEpisodes className={styles.episodes} />
+      </Suspense>
     </>
   );
 }

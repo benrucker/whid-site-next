@@ -1,4 +1,6 @@
+"use client";
 import { WithClassName } from "@/types/WithClassName";
+import { useSearchParams } from "next/navigation";
 import React from "react";
 import { Container, Row } from "react-bootstrap";
 import { CATALOG } from "../catalog";
@@ -7,14 +9,13 @@ import { sortEpisodes } from "../utils/utils";
 import { SeasonSwitcher } from "./SeasonSwitcher";
 import { VideoCard } from "./VideoCard";
 
-interface Props extends WithClassName {
-  readonly season: SeasonName;
-}
-
-export const DubEpisodes = React.memo<Props>(function DubEpisodesFn({
+export const DubEpisodes = React.memo<WithClassName>(function DubEpisodesFn({
   className,
-  season,
 }) {
+  const params = useSearchParams();
+
+  const season = (params.get("season") as SeasonName) ?? SeasonName.SEASON_1;
+
   return (
     <div className={className}>
       <h3 className="text-center mt-4">Episodes</h3>

@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
         pathname: "/whid/thumbnails/**",
       },
     ],
+    unoptimized: true,
   },
   sassOptions: {
     // This will eventually be fixed by the Next team

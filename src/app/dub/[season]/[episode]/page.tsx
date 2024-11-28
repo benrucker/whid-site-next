@@ -29,3 +29,18 @@ export default async function Dub({ params }: Props) {
     </>
   );
 }
+
+export function generateStaticParams() {
+  const routes = [];
+
+  for (const [seasonId, season] of Object.entries(CATALOG.seasons)) {
+    for (const episode of season.episodes) {
+      routes.push({
+        episode: episode.id,
+        season: seasonId,
+      });
+    }
+  }
+
+  return routes;
+}
