@@ -1,4 +1,9 @@
-export const MAJOR_COLORS = ["#ffd294", "#a3eff7", "#fcaecf", "#bda6ff"];
+export const MAJOR_COLORS = [
+  "#ffd294",
+  "#a3eff7",
+  "#fcaecf",
+  "#bda6ff",
+] as const;
 
 export function getRandomMajorColor() {
   return MAJOR_COLORS[getRandomInteger(MAJOR_COLORS.length)];

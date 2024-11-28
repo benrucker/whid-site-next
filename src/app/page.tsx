@@ -1,4 +1,6 @@
+import { MAJOR_COLORS } from "@/utils/majorColors";
 import classNames from "classnames";
+import { Metadata, Viewport } from "next";
 import Container from "react-bootstrap/esm/Container";
 import { VideoPreviewCard } from "./components/VideoPreviewCard";
 import styles from "./page.module.scss";
@@ -43,3 +45,25 @@ export default function Home() {
     </Container>
   );
 }
+
+export const metadata: Metadata = {
+  title: "what have i done",
+  description:
+    "We are a group of friends who make stupid videos. Like, really stupid.",
+  openGraph: {
+    url: "whid.live",
+    siteName: "whid.live",
+    images: {
+      url: "/favicon.ico",
+      width: 64,
+      height: 52,
+    },
+  },
+  twitter: {
+    card: "summary",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: MAJOR_COLORS[0],
+};
