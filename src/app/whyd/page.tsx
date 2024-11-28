@@ -31,8 +31,7 @@ export default function Whyd() {
           <FeaturedContentCard
             className="mt-5 mb-5"
             description="To celebrate 5 years of chatting on Discord, this website briefly documented the history of the server, some overall statics, and included a small personalized section for each user at the end."
-            // TODO: Make this point to whbd.whid.live
-            href="https://12b3.pw/whid/whbd/"
+            href="https://whbd.whid.live"
             subtitle="Released 4/26/2021"
             thumbnailGridSize={5}
             thumbnailUrl={anniversaryImage}
