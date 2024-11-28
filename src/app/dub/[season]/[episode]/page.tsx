@@ -5,7 +5,6 @@ import { isSeasonName } from "../../types/SeasonName";
 import {
   constructThumbnailUrlFromEpId,
   constructVideoUrlFromEpId,
-  constructWatchUrlFromEpId,
 } from "../../utils/utils";
 import { VideoPlayer } from "./components/VideoPlayer";
 
@@ -71,7 +70,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: episodeData.title,
       siteName: "whid.live",
-      url: constructWatchUrlFromEpId(episode, season),
+      url: constructVideoUrlFromEpId(episode, season),
       type: "video.episode",
       description: "what have i dubbed",
       videos: {
