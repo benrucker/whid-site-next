@@ -76,7 +76,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       videos: {
         width: 1280,
         height: 720,
-        type: "video/mp4",
+        type: "text/html",
         url: constructVideoUrlFromEpId(episode, season),
         secureUrl: constructVideoUrlFromEpId(episode, season),
       },
