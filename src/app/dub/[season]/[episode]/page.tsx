@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: episodeData.title,
       siteName: "whid.live",
       url: constructVideoUrlFromEpId(episode, season),
-      type: "video.episode",
+      type: "video.other",
       description: "what have i dubbed",
       videos: {
         width: 1280,
