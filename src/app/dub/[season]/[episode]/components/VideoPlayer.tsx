@@ -10,7 +10,7 @@ import { SeasonName } from "@/app/dub/types/SeasonName";
 import { convertTimestampToSeconds } from "@/app/dub/types/timestamp";
 import {
   constructThumbnailURL,
-  constructVideoURL,
+  constructVideoUrlFromEpId,
 } from "@/app/dub/utils/utils";
 import { WithClassName } from "@/types/WithClassName";
 import classNames from "classnames";
@@ -38,7 +38,7 @@ export const VideoPlayer = React.memo<Props>(function VideoPlayerFn({
     }
   }, []);
 
-  const videoUrl = constructVideoURL(content.id, seasonName);
+  const videoUrl = constructVideoUrlFromEpId(content.id, seasonName);
   const thumbnailUrl = constructThumbnailURL(content, seasonName);
 
   return (

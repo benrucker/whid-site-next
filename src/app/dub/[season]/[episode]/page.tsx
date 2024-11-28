@@ -1,5 +1,12 @@
+import { MAJOR_COLORS } from "@/utils/majorColors";
+import { Metadata, Viewport } from "next";
 import { CATALOG } from "../../catalog";
 import { isSeasonName } from "../../types/SeasonName";
+import {
+  constructThumbnailUrlFromEpId,
+  constructVideoUrlFromEpId,
+  constructWatchUrlFromEpId,
+} from "../../utils/utils";
 import { VideoPlayer } from "./components/VideoPlayer";
 
 interface Props {
@@ -44,3 +51,47 @@ export function generateStaticParams() {
 
   return routes;
 }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { season, episode } = await params;
+
+  if (!isSeasonName(season)) {
+    throw new Error("Invalid season");
+  }
+
+  const episodeData = CATALOG.seasons[season].episodes.find(
+    ({ id }) => id === episode
+  );
+
+  if (episodeData == null) {
+    throw new Error("Invalid episode");
+  }
+
+  return {
+    openGraph: {
+      title: episodeData.title,
+      siteName: "whid.live",
+      url: constructWatchUrlFromEpId(episode, season),
+      type: "video.episode",
+      description: "what have i dubbed",
+      videos: {
+        width: 1280,
+        height: 720,
+        type: "video/mp4",
+        url: constructVideoUrlFromEpId(episode, season),
+        secureUrl: constructVideoUrlFromEpId(episode, season),
+      },
+
+      images: {
+        width: 1280,
+        height: 720,
+        url: constructThumbnailUrlFromEpId(episode, season),
+        secureUrl: constructThumbnailUrlFromEpId(episode, season),
+      },
+    },
+  };
+}
+
+export const viewport: Viewport = {
+  themeColor: MAJOR_COLORS[0],
+};

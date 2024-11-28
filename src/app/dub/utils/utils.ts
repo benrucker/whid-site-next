@@ -1,4 +1,4 @@
-import { Catalog, FeaturedVideo, Episode } from "../types/catalogTypes";
+import { Catalog, Episode, FeaturedVideo } from "../types/catalogTypes";
 import { SeasonName } from "../types/SeasonName";
 
 class VideoIDError extends Error {
@@ -60,10 +60,29 @@ export function constructWatchURL(ep: Episode, seasonName: SeasonName) {
   return "/dub/" + seasonName + "/" + ep.id + "";
 }
 
-export function constructVideoURL(episodeId: string, seasonName: SeasonName) {
+export function constructWatchUrlFromEpId(
+  episodeId: string,
+  seasonName: SeasonName
+) {
+  return "/dub/" + seasonName + "/" + episodeId + "";
+}
+
+export function constructVideoUrlFromEpId(
+  episodeId: string,
+  seasonName: SeasonName
+) {
   return "https://12b3.pw/whid/videos/" + seasonName + "/" + episodeId + ".mp4";
 }
 
 export function constructThumbnailURL(ep: Episode, seasonName: SeasonName) {
   return "https://12b3.pw/whid/thumbnails/" + seasonName + "/" + ep.id + ".png";
+}
+
+export function constructThumbnailUrlFromEpId(
+  episodeId: string,
+  seasonName: SeasonName
+) {
+  return (
+    "https://12b3.pw/whid/thumbnails/" + seasonName + "/" + episodeId + ".png"
+  );
 }
