@@ -74,16 +74,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "video.other",
       description: "what have i dubbed",
       videos: {
-        width: 1280,
-        height: 720,
-        type: "text/html",
+        width: 1920,
+        height: 1080,
+        type: "video/mp4",
         url: constructVideoUrlFromEpId(episode, season),
         secureUrl: constructVideoUrlFromEpId(episode, season),
       },
 
       images: {
-        width: 1280,
-        height: 720,
+        width: 1920,
+        height: 1080,
         url: constructThumbnailUrlFromEpId(episode, season),
         secureUrl: constructThumbnailUrlFromEpId(episode, season),
       },
@@ -91,10 +91,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: "player",
       players: {
-        height: 720,
+        height: 1080,
         playerUrl: constructVideoUrlFromEpId(episode, season),
         streamUrl: constructVideoUrlFromEpId(episode, season),
-        width: 1280,
+        width: 1920,
       },
     },
   };
