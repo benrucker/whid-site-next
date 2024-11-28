@@ -14,12 +14,14 @@ export const DubEpisodes = React.memo<WithClassName>(function DubEpisodesFn({
 }) {
   const params = useSearchParams();
 
-  const season = (params.get("season") as SeasonName) ?? SeasonName.SEASON_1;
+  const [season, setSeason] = React.useState<SeasonName>(
+    () => (params.get("season") as SeasonName) ?? SeasonName.SEASON_1
+  );
 
   return (
     <div className={className}>
       <h3 className="text-center mt-4">Episodes</h3>
-      <SeasonSwitcher activeSeason={season} />
+      <SeasonSwitcher activeSeason={season} onChange={setSeason} />
       <Container className="mt-1">
         <Row>
           {sortEpisodes(CATALOG.seasons[season].episodes, season).map(

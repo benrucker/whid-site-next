@@ -7,10 +7,12 @@ import { SeasonName } from "../types/SeasonName";
 
 interface Props {
   readonly activeSeason: SeasonName;
+  readonly onChange: (season: SeasonName) => void;
 }
 
 export const SeasonSwitcher = React.memo<Props>(function SeasonSwitcherFn({
   activeSeason,
+  onChange,
 }) {
   return (
     <Container className="d-flex mt-3 mb-3">
@@ -24,6 +26,7 @@ export const SeasonSwitcher = React.memo<Props>(function SeasonSwitcherFn({
                 active: activeSeason === otherSeasonName,
               })}
               href={`/dub?season=${otherSeasonName}`}
+              onClick={() => onChange(otherSeasonName as SeasonName)}
               prefetch={true}
               scroll={false}
             >
