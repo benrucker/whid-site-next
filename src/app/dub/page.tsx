@@ -1,7 +1,7 @@
 import styles from "./page.module.scss";
 import { Alert, Container } from "react-bootstrap";
 import { CATALOG } from "./catalog";
-import { FeaturedContentCard } from "./components/FeaturedContentCard";
+import { FeaturedEpisodeCard } from "./components/FeaturedEpisodeCard";
 import { getFeaturedVideo } from "./utils/utils";
 import { DubEpisodes } from "./components/DubEpisodes";
 import { SeasonName } from "./types/SeasonName";
@@ -30,7 +30,7 @@ export default async function Dub({ searchParams }: Props) {
         <>
           <h3 className="text-center mt-4">Featured Video</h3>
           <Container>
-            <FeaturedContentCard
+            <FeaturedEpisodeCard
               content={featuredVideo}
               thumbnailGridSize={6}
             />
