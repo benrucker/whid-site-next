@@ -1,9 +1,9 @@
 import { Container } from "react-bootstrap";
-import { WhydHeader } from "./components/WhydHeader";
 import { FeaturedContentCard } from "../dub/components/FeaturedContentCard";
-import whyd2022Image from "./gitcommit.png";
+import { WhydHeader } from "./components/WhydHeader";
 import whyd2021Image from "./construction.png";
 import anniversaryImage from "./ethan.png";
+import whyd2022Image from "./gitcommit.png";
 
 export default function Whyd() {
   return (

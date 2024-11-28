@@ -1,8 +1,8 @@
-import styles from "./NextImage.module.scss";
 import { split } from "@/utils/split";
 import classNames from "classnames";
 import Image from "next/image";
 import React from "react";
+import styles from "./NextImage.module.scss";
 
 type Ratio = `${number}x${number}`;
 

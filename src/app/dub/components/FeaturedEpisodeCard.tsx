@@ -1,11 +1,6 @@
-import classNames from "classnames";
-import Link from "next/link";
 import React from "react";
-import { CardBody, CardText, CardTitle, Col, Row } from "react-bootstrap";
 import { Episode, FeaturedVideo } from "../types/catalogTypes";
 import { constructThumbnailURL, constructWatchURL } from "../utils/utils";
-import { CardImage } from "./CardImage";
-import styles from "./FeaturedContentCard.module.scss";
 import { FeaturedContentCard } from "./FeaturedContentCard";
 
 interface Props {

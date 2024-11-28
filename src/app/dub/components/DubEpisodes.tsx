@@ -4,8 +4,8 @@ import { Container, Row } from "react-bootstrap";
 import { CATALOG } from "../catalog";
 import { SeasonName } from "../types/SeasonName";
 import { sortEpisodes } from "../utils/utils";
-import { VideoCard } from "./VideoCard";
 import { SeasonSwitcher } from "./SeasonSwitcher";
+import { VideoCard } from "./VideoCard";
 
 interface Props extends WithClassName {
   readonly season: SeasonName;

@@ -1,11 +1,11 @@
 import { WithClassName } from "@/types/WithClassName";
 import classNames from "classnames";
+import { StaticImageData } from "next/image";
 import Link from "next/link";
 import React from "react";
 import { CardBody, CardText, CardTitle, Col, Row } from "react-bootstrap";
 import { CardImage } from "./CardImage";
 import styles from "./FeaturedContentCard.module.scss";
-import { StaticImageData } from "next/image";
 
 interface Props extends WithClassName {
   readonly description?: string;

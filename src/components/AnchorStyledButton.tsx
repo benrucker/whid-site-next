@@ -1,7 +1,7 @@
 import classNames from "classnames";
-import styles from "./AnchorStyledButton.module.scss";
 import React from "react";
 import { Button } from "react-bootstrap";
+import styles from "./AnchorStyledButton.module.scss";
 
 interface Props extends React.ComponentProps<typeof Button> {
   readonly intent: "primary" | undefined; // TODO real intents union

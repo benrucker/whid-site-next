@@ -1,10 +1,10 @@
-import styles from "./page.module.scss";
 import { Alert, Container } from "react-bootstrap";
 import { CATALOG } from "./catalog";
-import { FeaturedEpisodeCard } from "./components/FeaturedEpisodeCard";
-import { getFeaturedVideo } from "./utils/utils";
 import { DubEpisodes } from "./components/DubEpisodes";
+import { FeaturedEpisodeCard } from "./components/FeaturedEpisodeCard";
+import styles from "./page.module.scss";
 import { SeasonName } from "./types/SeasonName";
+import { getFeaturedVideo } from "./utils/utils";
 
 interface Props {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
