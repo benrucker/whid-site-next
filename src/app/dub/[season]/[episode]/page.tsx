@@ -28,11 +28,9 @@ export default async function Dub({ params }: Props) {
   }
 
   return (
-    <>
-      <div className="container mt-5">
-        <VideoPlayer seasonName={season} content={episodeData} />
-      </div>
-    </>
+    <div className="container mt-5">
+      <VideoPlayer seasonName={season} content={episodeData} />
+    </div>
   );
 }
 
@@ -67,6 +65,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
+    title: `Watching ${episodeData.title}`,
     openGraph: {
       title: episodeData.title,
       siteName: "whid.live",
