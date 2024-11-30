@@ -14,9 +14,18 @@ export const DubEpisodes = React.memo<WithClassName>(function DubEpisodesFn({
 }) {
   const params = useSearchParams();
 
-  const [season, setSeason] = React.useState<SeasonName>(
-    () => (params.get("season") as SeasonName) ?? SeasonName.SEASON_1
+  const seasonFromParams = React.useMemo(
+    () => (params.get("season") as SeasonName) ?? SeasonName.SEASON_1,
+    [params]
   );
+
+  const [season, setSeason] = React.useState<SeasonName>(
+    () => seasonFromParams
+  );
+
+  React.useEffect(() => {
+    setSeason(seasonFromParams);
+  }, [seasonFromParams]);
 
   return (
     <div className={className}>
