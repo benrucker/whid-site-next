@@ -18,6 +18,9 @@ import React from "react";
 import { DubChapter } from "./DubChapter";
 import { DubPart } from "./DubPart";
 
+const DEFAULT_VOLUME = "0.4";
+const VOLUME_KEY = "volume";
+
 interface Props extends WithClassName {
   readonly seasonName: SeasonName;
   readonly content: Episode;
@@ -38,6 +41,29 @@ export const VideoPlayer = React.memo<Props>(function VideoPlayerFn({
     }
   }, []);
 
+  React.useEffect(() => {
+    function updateVolume() {
+      if (video.current == null) {
+        setTimeout(updateVolume, 50);
+        return;
+      }
+
+      const volume = window.localStorage.getItem(VOLUME_KEY) ?? DEFAULT_VOLUME;
+      video.current.volume = Number(volume);
+    }
+    updateVolume();
+  }, []);
+
+  const handleVolumeChange: React.ReactEventHandler<HTMLVideoElement> =
+    React.useCallback((videoEventTarget) => {
+      const newVolume = videoEventTarget.currentTarget.volume.toString();
+      if (newVolume === DEFAULT_VOLUME) {
+        // Hack to avoid storing the default in localstorage.
+        return;
+      }
+      window.localStorage.setItem(VOLUME_KEY, newVolume);
+    }, []);
+
   const videoUrl = constructVideoUrlFromEpId(content.id, seasonName);
   const thumbnailUrl = constructThumbnailURL(content, seasonName);
 
@@ -53,6 +79,7 @@ export const VideoPlayer = React.memo<Props>(function VideoPlayerFn({
           preload="auto"
           src={videoUrl}
           style={{ backgroundColor: "black" }}
+          onVolumeChange={handleVolumeChange}
         >
           Sorry, your browser doesn&apos;t support embedded videos.
         </video>
