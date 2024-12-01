@@ -12,20 +12,7 @@ import { VideoCard } from "./VideoCard";
 export const DubEpisodes = React.memo<WithClassName>(function DubEpisodesFn({
   className,
 }) {
-  const params = useSearchParams();
-
-  const seasonFromParams = React.useMemo(
-    () => (params.get("season") as SeasonName) ?? SeasonName.SEASON_1,
-    [params]
-  );
-
-  const [season, setSeason] = React.useState<SeasonName>(
-    () => seasonFromParams
-  );
-
-  React.useEffect(() => {
-    setSeason(seasonFromParams);
-  }, [seasonFromParams]);
+  const [season, setSeason] = useSeasonFromParams();
 
   return (
     <div className={className}>
@@ -49,3 +36,25 @@ export const DubEpisodes = React.memo<WithClassName>(function DubEpisodesFn({
     </div>
   );
 });
+
+/**
+ * Tracks the selected season in local state, keeps local state in sync with the URL.
+ */
+function useSeasonFromParams() {
+  const params = useSearchParams();
+
+  const seasonFromParams = React.useMemo(
+    () => (params.get("season") as SeasonName) ?? SeasonName.SEASON_1,
+    [params]
+  );
+
+  const [season, setSeason] = React.useState<SeasonName>(
+    () => seasonFromParams
+  );
+
+  React.useEffect(() => {
+    setSeason(seasonFromParams);
+  }, [seasonFromParams]);
+
+  return [season, setSeason] as const;
+}
