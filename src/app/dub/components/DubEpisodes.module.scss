@@ -1,0 +1,10 @@
+.dubTab {
+  :global(.nav-link) {
+    color: var(--bs-secondary-color);
+
+    &:global(.active) {
+      color: var(--bs-body-color);
+      font-weight: 400;
+    }
+  }
+}
