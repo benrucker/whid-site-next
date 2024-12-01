@@ -12,9 +12,10 @@ export const CATALOG: Catalog = {
       name: "Season 1",
       episodes: [
         {
-          title: "1. The One We Don't Talk About",
+          title: "The One We Don't Talk About",
           releaseDate: "4/14/2020",
           id: "1",
+          episodeNumber: 1,
           parts: [
             {
               members: "Brendan, Ethan, Markwood, Trent",
@@ -31,9 +32,10 @@ export const CATALOG: Catalog = {
           ],
         },
         {
-          title: "2. Get Isekaied",
+          title: "Get Isekaied",
           releaseDate: "4/21/2020",
           id: "2",
+          episodeNumber: 2,
           parts: [
             {
               members: "Brendan, Juan, Markwood, Thomas",
@@ -54,9 +56,10 @@ export const CATALOG: Catalog = {
           ],
         },
         {
-          title: "3. SIMP",
+          title: "SIMP",
           releaseDate: "5/12/2020",
           id: "3",
+          episodeNumber: 3,
           parts: [
             {
               members: "Ben, Josh, Markwood",
@@ -77,9 +80,10 @@ export const CATALOG: Catalog = {
           ],
         },
         {
-          title: "4. Attack On Tacos",
+          title: "Attack On Tacos",
           releaseDate: "6/4/2020",
           id: "4",
+          episodeNumber: 4,
           parts: [
             {
               members: "Ethan, Tristan, Yoni",
@@ -100,9 +104,10 @@ export const CATALOG: Catalog = {
           ],
         },
         {
-          title: "5. Jojo's Smashing Adventure",
+          title: "Jojo's Smashing Adventure",
           releaseDate: "6/21/2020",
           id: "5",
+          episodeNumber: 5,
           parts: [
             {
               members: "Ben, Brendan, Gabe, Markwood",
@@ -123,9 +128,10 @@ export const CATALOG: Catalog = {
           ],
         },
         {
-          title: "6. My Saucy AAAAcademia",
+          title: "My Saucy AAAAcademia",
           releaseDate: "7/12/2020",
           id: "6",
+          episodeNumber: 6,
           parts: [
             {
               members: "Brendan, Chris, Josh, Kian, Trent",
@@ -146,9 +152,10 @@ export const CATALOG: Catalog = {
           ],
         },
         {
-          title: "7. The OTHER One We Don't Talk About",
+          title: "The OTHER One We Don't Talk About",
           releaseDate: "8/3/2020",
           id: "7",
+          episodeNumber: 7,
           parts: [
             {
               members: "Ethan, Josh, Juan, Rob, Tristan",
@@ -169,9 +176,10 @@ export const CATALOG: Catalog = {
           ],
         },
         {
-          title: "8. Snord",
+          title: "Snord",
           releaseDate: "8/29/2020",
           id: "8",
+          episodeNumber: 8,
           parts: [
             {
               members: "Ben, Ethan, Juan, Kian, Markwood",
@@ -193,9 +201,10 @@ export const CATALOG: Catalog = {
       name: "Season 2",
       episodes: [
         {
-          title: "1. whidubbed on Ice",
+          title: "whidubbed on Ice",
           releaseDate: "7/8/2021",
           id: "1",
+          episodeNumber: 1,
           parts: [
             {
               members: "Chris, Juan, Markwood, Russell, Sergei, Wyatt",
@@ -214,9 +223,10 @@ export const CATALOG: Catalog = {
             "In another spectacularly stupid episode, the gang of ‘whidubbed’ dips their greasy toes into parodying the shambles of reality with multiple segments of ‘Planet Earth.’ Monkees and Cheetos and Club Penguinos, oh my!",
         },
         {
-          title: "2. Jacob's Special Sauce",
+          title: "Jacob's Special Sauce",
           releaseDate: "5/24/2022",
           id: "2",
+          episodeNumber: 2,
           parts: [
             {
               members: "Alex, Gabe, James, Juan, Ross, Tristan",
@@ -239,9 +249,10 @@ export const CATALOG: Catalog = {
             "You thought we were done?!\nYou thought you could escape?!\nYou can never escape the dub!\nNow shut up and eat your ravioli, as the cuckmeisters cook up another toxic JoJo episode for the main course!",
         },
         {
-          title: "3. The Majors F###ing Died",
+          title: "The Majors F###ing Died",
           releaseDate: "6/4/2023",
           id: "3",
+          episodeNumber: 3,
           parts: [
             {
               members:
@@ -253,9 +264,10 @@ export const CATALOG: Catalog = {
             "The whid majors forgot to make an April Fool’s joke in the server this year, so the minors made one for them (3 months late).\n\nAll hell breaks loose in the Metaverse, as the minors bring you a special majorless dub of Yu-Gi-Oh!",
         },
         {
-          title: "4. Jacob's Zpecial Zauce",
+          title: "Jacob's Zpecial Zauce",
           releaseDate: "1/14/2024",
           id: "4",
+          episodeNumber: 4,
           parts: [
             {
               members: "Jackson, Tristan, Josh, Juan, Gabe",

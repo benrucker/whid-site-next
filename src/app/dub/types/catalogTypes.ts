@@ -23,6 +23,7 @@ export type Episode = BaseEpisode & (WithParts | WithChapters);
 interface BaseEpisode {
   readonly description?: string;
   readonly id: string;
+  readonly episodeNumber?: number;
   readonly releaseDate?: string;
   readonly title: string;
 }

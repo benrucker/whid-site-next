@@ -7,6 +7,8 @@ import { Episode } from "../types/catalogTypes";
 import { SeasonName } from "../types/SeasonName";
 import { constructThumbnailURL, constructWatchURL } from "../utils/utils";
 import { CardImage } from "./CardImage";
+import { CardImageWithBadge } from "./CardImageWithBadge";
+import { EpisodeBadge } from "./EpisodeBadge";
 
 interface Props extends WithClassName {
   readonly episode: Episode;
@@ -26,11 +28,12 @@ export const VideoCard = React.memo<Props>(function VideoCardFn({
       className={classNames("text-reset text-decoration-none", className)}
     >
       <Card>
-        <CardImage
+        <CardImageWithBadge
           alt={episode.title}
           loading={imageLoading}
           ratio="16x9"
           src={constructThumbnailURL(episode, season)}
+          badge={<EpisodeBadge episode={episode} />}
         />
         <CardBody>
           <CardTitle as="h5" className="text-truncate pb-1 mb-0">
