@@ -1,5 +1,6 @@
 import { Suspense } from "react";
-import { Alert, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import { ErrorToast } from "../components/ErrorToast";
 import { CATALOG } from "./catalog";
 import { DubEpisodes } from "./components/DubEpisodes";
 import { FeaturedEpisodeCard } from "./components/FeaturedEpisodeCard";
@@ -8,17 +9,13 @@ import { getFeaturedVideo } from "./utils/utils";
 
 export default async function Dub() {
   const featuredVideo = getFeaturedVideo(CATALOG);
-  const videoAlert = null;
 
   return (
     <>
-      {videoAlert != null && (
-        <Container>
-          <Alert variant="danger" className="fade show m-2" role="alert">
-            <strong>Error:</strong> Invalid video ID
-          </Alert>
-        </Container>
-      )}
+      <Suspense>
+        <ErrorToast />
+      </Suspense>
+
       {featuredVideo != null && (
         <>
           <h3 className="text-center mt-4">Featured Video</h3>

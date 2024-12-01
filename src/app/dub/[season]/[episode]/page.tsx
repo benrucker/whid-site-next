@@ -1,5 +1,6 @@
 import { MAJOR_COLORS } from "@/utils/majorColors";
 import { Metadata, Viewport } from "next";
+import { notFound } from "next/navigation";
 import { CATALOG } from "../../catalog";
 import { isSeasonName } from "../../types/SeasonName";
 import {
@@ -16,7 +17,7 @@ export default async function Dub({ params }: Props) {
   const { season, episode } = await params;
 
   if (!isSeasonName(season)) {
-    throw new Error("Invalid season");
+    notFound();
   }
 
   const episodeData = CATALOG.seasons[season].episodes.find(
@@ -24,7 +25,7 @@ export default async function Dub({ params }: Props) {
   );
 
   if (episodeData == null) {
-    throw new Error("Invalid episode");
+    notFound();
   }
 
   return (
