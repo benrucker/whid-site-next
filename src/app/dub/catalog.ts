@@ -250,7 +250,7 @@ export const CATALOG: Catalog = {
         },
         {
           title: "The Majors F###ing Died",
-          releaseDate: "6/4/2023",
+          releaseDate: "7/4/2023",
           id: "3",
           episodeNumber: 3,
           parts: [
