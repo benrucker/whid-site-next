@@ -38,15 +38,15 @@ export const VideoPreviewCard = React.memo<Props>(function VideoPreviewCardFn({
       </Ratio>
       <Link href={videoPlayerLink} className="text-reset text-decoration-none">
         <div id="gallery-card" className="card-body">
-          <h5 className="card-title text-truncate pb-1 mb-0">{title}</h5>
+          <div className="fw-bold text-truncate pb-1 mb-0">{title}</div>
           {releaseDate && (
-            <h6 className="card-subtitle">
+            <span>
               <small className="text-muted"> Released {releaseDate}</small>
-            </h6>
+            </span>
           )}
-          <h6 v-if="description" className="card-subtitle mt-1">
+          <span v-if="description" className="mt-1">
             <small className="text-muted">{description}</small>
-          </h6>
+          </span>
         </div>
       </Link>
     </Card>

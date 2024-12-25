@@ -22,7 +22,7 @@ export const EpisodeBadge = React.memo<Props>(function EpisodeBadgeFn({
       className={classNames(styles.badge, "text-muted", className)}
       bg="secondary"
     >
-      <span className={styles.text}>Ep. {episode.episodeNumber}</span>
+      Ep. {episode.episodeNumber}
     </Badge>
   );
 });

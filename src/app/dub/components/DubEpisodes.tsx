@@ -47,7 +47,7 @@ export const DubEpisodes = React.memo<WithClassName>(function DubEpisodesFn({
           {TABS.map((tab) => (
             <Nav.Item key={tab} className={styles.dubTab}>
               <Nav.Link eventKey={tab}>
-                <h6 className="mb-1">{tab}</h6>
+                <div className="fw-bold">{tab}</div>
               </Nav.Link>
             </Nav.Item>
           ))}

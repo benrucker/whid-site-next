@@ -1,11 +1,15 @@
-$primary: #ffd294;
 $primaryRgb: 255, 210, 148;
 
-$theme-colors: (
-  "primary": $primary,
-);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-style: italic;
+}
 
-@import "~bootswatch/dist/darkly/variables";
+@import "./variables";
 @import "~bootstrap/scss/bootstrap";
 @import "~bootswatch/dist/darkly/bootswatch";
 
@@ -20,6 +24,10 @@ $theme-colors: (
 .btn-text-primary:hover {
   color: $primary;
   background-color: rgba($primary, 0.1);
+}
+
+nav {
+  background-color: $gray-800;
 }
 
 // a {

@@ -10,9 +10,11 @@ export default function Home() {
     <Container>
       <div>
         <div className="header mt-5 d-flex justify-content-center fw-bold align-items-center">
-          <h1 className={classNames(styles.h1, "fw-bolder px-2")}>Hi!</h1>
+          <h1 className={classNames(styles.h1, "fw-bolder px-4 mb-0 pb-0")}>
+            Hi!
+          </h1>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/miniwyatt.png" alt="hi!" className="px-2" />
+          <img src="/miniwyatt.png" alt="hi!" className="px-2" width="75" />
         </div>
 
         <div className={classNames(styles.welcome, "mt-5 mb-2 text-center")}>

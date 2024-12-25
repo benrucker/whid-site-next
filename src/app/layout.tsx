@@ -14,11 +14,19 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
-    <html lang="en" data-bs-theme="dark">
-      <body>
-        <WhidNavbar />
-        {children}
-      </body>
-    </html>
+    <>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://use.typekit.net/lpk6xvv.css"
+        ></link>
+      </head>
+      <html lang="en" data-bs-theme="dark">
+        <body className="text-reset">
+          <WhidNavbar />
+          {children}
+        </body>
+      </html>
+    </>
   );
 }
