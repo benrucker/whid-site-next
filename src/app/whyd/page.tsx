@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/esm/Container";
 import { FeaturedContentCard } from "../dub/components/FeaturedContentCard";
 import { WhydHeader } from "./components/WhydHeader";
 import whyd2021Image from "./construction.png";

@@ -1,7 +1,7 @@
 import { WithClassName } from "@/types/WithClassName";
 import classNames from "classnames";
 import React from "react";
-import { Badge } from "react-bootstrap";
+import Badge from "react-bootstrap/esm/Badge";
 import { Episode } from "../types/catalogTypes";
 import styles from "./EpisodeBadge.module.scss";
 

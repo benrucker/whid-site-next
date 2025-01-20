@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React from "react";
-import { Button } from "react-bootstrap";
+import Button from "react-bootstrap/esm/Button";
 import styles from "./AnchorStyledButton.module.scss";
 
 interface Props extends React.ComponentProps<typeof Button> {

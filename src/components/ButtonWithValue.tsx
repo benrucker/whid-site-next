@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import Button from "react-bootstrap/esm/Button";
 
 interface Props<T> extends Omit<React.ComponentProps<typeof Button>, "value"> {
   readonly value: T;

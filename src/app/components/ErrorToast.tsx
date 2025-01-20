@@ -3,7 +3,8 @@ import { useBooleanState } from "@/hooks/useBooleanState";
 import { useSearchParam } from "@/hooks/useSearchParam";
 import { useSearchParams } from "next/navigation";
 import React from "react";
-import { Toast, ToastContainer } from "react-bootstrap";
+import Toast from "react-bootstrap/esm/Toast";
+import ToastContainer from "react-bootstrap/esm/ToastContainer";
 
 export const ErrorToast = React.memo(function ErrorToastFn() {
   const searchParams = useSearchParams();

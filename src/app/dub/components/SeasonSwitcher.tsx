@@ -1,7 +1,8 @@
 import classNames from "classnames";
 import Link from "next/link";
 import React from "react";
-import { ButtonGroup, Container } from "react-bootstrap";
+import ButtonGroup from "react-bootstrap/esm/ButtonGroup";
+import Container from "react-bootstrap/esm/Container";
 import { CATALOG } from "../catalog";
 import { SeasonName } from "../types/SeasonName";
 

@@ -3,7 +3,11 @@ import classNames from "classnames";
 import { StaticImageData } from "next/image";
 import Link from "next/link";
 import React from "react";
-import { CardBody, CardText, CardTitle, Col, Row } from "react-bootstrap";
+import CardBody from "react-bootstrap/esm/CardBody";
+import CardText from "react-bootstrap/esm/CardText";
+import CardTitle from "react-bootstrap/esm/CardTitle";
+import Col from "react-bootstrap/esm/Col";
+import Row from "react-bootstrap/esm/Row";
 import { CardImage } from "./CardImage";
 import styles from "./FeaturedContentCard.module.scss";
 

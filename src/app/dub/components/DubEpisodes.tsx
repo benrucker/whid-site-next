@@ -1,7 +1,10 @@
 "use client";
 import { WithClassName } from "@/types/WithClassName";
 import React from "react";
-import { Container, Nav, Row, Tab } from "react-bootstrap";
+import Container from "react-bootstrap/esm/Container";
+import Nav from "react-bootstrap/esm/Nav";
+import Row from "react-bootstrap/esm/Row";
+import Tab from "react-bootstrap/esm/Tab";
 import { CATALOG } from "../catalog";
 import { SeasonName } from "../types/SeasonName";
 import { sortEpisodes } from "../utils/utils";
@@ -80,12 +83,12 @@ export const DubEpisodes = React.memo<WithClassName>(function DubEpisodesFn({
                 {sortEpisodes(
                   CATALOG.seasons[SeasonName.EXTRAS].episodes,
                   SeasonName.EXTRAS
-                ).map((episode, index) => (
+                ).map((episode) => (
                   <VideoCard
                     key={episode.title}
                     className="col-md-6 col-lg-3 my-3 mt-1"
                     episode={episode}
-                    imageLoading={index < 8 ? "eager" : "lazy"}
+                    imageLoading="lazy"
                     season={SeasonName.EXTRAS}
                   />
                 ))}
