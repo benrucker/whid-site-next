@@ -27,10 +27,11 @@ export const VideoCard = React.memo<Props>(function VideoCardFn({
   return (
     <Link
       href={constructWatchURL(episode, season)}
-      className={classNames("text-decoration-none", className)}
+      className={classNames("text-decoration-none", className, styles.link)}
     >
       <Card className={classNames(styles.card, "text-reset")}>
         <CardImageWithBadge
+          className={styles.image}
           alt={episode.title}
           loading={imageLoading}
           ratio="16x9"
