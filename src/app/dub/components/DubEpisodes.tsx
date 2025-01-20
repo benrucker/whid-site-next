@@ -13,6 +13,7 @@ import { VideoCard } from "./VideoCard";
 
 const TABS = ["Episodes", "Extras"] as const;
 type Tab = (typeof TABS)[number];
+const DEFAULT_TAB = TABS[0];
 
 const EPISODE_SEASONS = [
   SeasonName.SEASON_2,
@@ -20,31 +21,16 @@ const EPISODE_SEASONS = [
   SeasonName.SEASON_1,
 ];
 
-function isTab(tab: string): tab is Tab {
-  return TABS.includes(tab as Tab);
-}
-
 export const DubEpisodes = React.memo<WithClassName>(function DubEpisodesFn({
   className,
 }) {
-  const [season, setSeason] = React.useState<Tab>(TABS[0]);
-
-  const handleSelect = React.useCallback((tab: string | null) => {
-    if (tab == null || !isTab(tab)) {
-      return;
-    }
-    setSeason(tab ?? undefined);
-  }, []);
-
   return (
     <div className={className}>
-      <Tab.Container activeKey={season}>
+      <Tab.Container defaultActiveKey={DEFAULT_TAB}>
         <Nav
           className="d-flex justify-content-center mb-5 gap-4"
           variant="underline"
-          activeKey={season}
           defaultValue={TABS[0]}
-          onSelect={handleSelect}
         >
           {TABS.map((tab) => (
             <Nav.Item key={tab} className={styles.dubTab}>
@@ -88,7 +74,6 @@ export const DubEpisodes = React.memo<WithClassName>(function DubEpisodesFn({
                     key={episode.title}
                     className="col-md-6 col-lg-3 my-3 mt-1"
                     episode={episode}
-                    imageLoading="lazy"
                     season={SeasonName.EXTRAS}
                   />
                 ))}
