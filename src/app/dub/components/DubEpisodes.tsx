@@ -31,7 +31,7 @@ export const DubEpisodes = React.memo<WithClassName>(function DubEpisodesFn({
               <h3>{CATALOG.seasons[season].name}</h3>
               <Row>
                 {sortEpisodes(CATALOG.seasons[season].episodes, season).map(
-                  (episode, index) => (
+                  (episode) => (
                     <VideoCard
                       key={episode.title}
                       className="col-md-6 col-lg-3 my-3 mt-1"
