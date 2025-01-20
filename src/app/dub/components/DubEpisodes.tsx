@@ -1,6 +1,5 @@
 "use client";
 import { WithClassName } from "@/types/WithClassName";
-import classNames from "classnames";
 import React from "react";
 import { Container, Nav, Row, Tab } from "react-bootstrap";
 import { CATALOG } from "../catalog";
@@ -35,10 +34,10 @@ export const DubEpisodes = React.memo<WithClassName>(function DubEpisodesFn({
   }, []);
 
   return (
-    <div className={classNames(className)}>
+    <div className={className}>
       <Tab.Container activeKey={season}>
         <Nav
-          className="d-flex justify-content-center mt-4 mb-5 gap-4"
+          className="d-flex justify-content-center mb-5 gap-4"
           variant="underline"
           activeKey={season}
           defaultValue={TABS[0]}
@@ -46,7 +45,7 @@ export const DubEpisodes = React.memo<WithClassName>(function DubEpisodesFn({
         >
           {TABS.map((tab) => (
             <Nav.Item key={tab} className={styles.dubTab}>
-              <Nav.Link eventKey={tab}>
+              <Nav.Link className="pt-0" eventKey={tab}>
                 <div className="fw-bold">{tab}</div>
               </Nav.Link>
             </Nav.Item>

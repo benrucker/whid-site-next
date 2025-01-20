@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { ColoredHeader } from "./ColoredHeader";
 import styles from "./WhydHeader.module.scss";
 import youPng from "./you.png";
 
@@ -14,11 +15,7 @@ export const WhydHeader = React.memo(function WhydHeaderFn() {
             width={100}
           />
         </div>
-        <h1 className="pb-2">
-          <b>
-            <i className={styles.titleText}>what have you done</i>
-          </b>
-        </h1>
+        <ColoredHeader>what have you done</ColoredHeader>
       </div>
       <h5 className={"text-center pt-3 pb-1 text-muted"}>
         A collection of &quot;Spotify Wrapped&quot; clones!
