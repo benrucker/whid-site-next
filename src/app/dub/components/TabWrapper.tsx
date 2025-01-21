@@ -2,21 +2,19 @@
 import React from "react";
 import Nav from "react-bootstrap/esm/Nav";
 import Tab from "react-bootstrap/esm/Tab";
-import { typedReactMemo } from "../utils/typedReactMemo";
 import styles from "./DubEpisodes.module.scss";
 
-interface Props<T> {
+interface Props {
   readonly defaultTab: string;
-  readonly tabs: ReadonlyArray<string> & { length: T };
-  // Note: Use NoInfer to lock the array length to the length of `tabs`
-  readonly tabContents: ReadonlyArray<React.ReactNode> & { length: NoInfer<T> };
+  readonly tabContents: Record<string, React.ReactNode>;
 }
 
-export const TabWrapper = typedReactMemo(function TabWrapperFn<T>({
+export const TabWrapper = React.memo<Props>(function TabWrapperFn({
   defaultTab,
-  tabs,
   tabContents,
-}: Props<T>) {
+}) {
+  const tabs = React.useMemo(() => Object.keys(tabContents), [tabContents]);
+
   return (
     <Tab.Container defaultActiveKey={defaultTab}>
       <Nav
@@ -34,9 +32,9 @@ export const TabWrapper = typedReactMemo(function TabWrapperFn<T>({
       </Nav>
 
       <Tab.Content>
-        {tabs.map((tab, index) => (
+        {tabs.map((tab) => (
           <Tab.Pane key={tab} eventKey={tab} title={tab}>
-            {tabContents[index]}
+            {tabContents[tab]}
           </Tab.Pane>
         ))}
       </Tab.Content>
