@@ -29,7 +29,7 @@ export const DubEpisodes = React.memo<WithClassName>(function DubEpisodesFn({
           EPISODE_SEASONS.map((season) => (
             <Container key={season} className="mt-3">
               <h3>{CATALOG.seasons[season].name}</h3>
-              <Row>
+              <Row className="flex-column-reverse flex-md-row">
                 {sortEpisodes(CATALOG.seasons[season].episodes, season).map(
                   (episode) => (
                     <VideoCard
@@ -44,7 +44,7 @@ export const DubEpisodes = React.memo<WithClassName>(function DubEpisodesFn({
             </Container>
           )),
           <Container key={SeasonName.EXTRAS} className="mt-1">
-            <Row>
+            <Row className="flex-column-reverse flex-md-row">
               {sortEpisodes(
                 CATALOG.seasons[SeasonName.EXTRAS].episodes,
                 SeasonName.EXTRAS
