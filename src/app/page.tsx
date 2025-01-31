@@ -33,11 +33,13 @@ export default function Home() {
 
       <div className="featured mt-5 container">
         <VideoPreviewCard
-          videoLink="https://12b3.pw/whid/videos/extra/context2.mp4"
-          videoPlayerLink="/dub/"
+          description="Click here to see them all!"
+          // NOTE: We don't want to block other network resources by preloading the video
+          preload="metadata"
           thumbnailLink="https://12b3.pw/whid/thumbnails/extra/context2.png"
           title="what have i dubbed Out of Context"
-          description="Click here to see them all!"
+          videoLink="https://12b3.pw/whid/videos/extra/context2.mp4"
+          videoPlayerLink="/dub"
         />
       </div>
 

@@ -1,11 +1,12 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { MediaHTMLAttributes } from "react";
 import Card from "react-bootstrap/esm/Card";
 import Ratio from "react-bootstrap/esm/Ratio";
 
 interface Props {
   readonly description: string;
+  readonly preload?: MediaHTMLAttributes<HTMLVideoElement>["preload"];
   readonly releaseDate?: string;
   readonly thumbnailLink: string;
   readonly title: string;
@@ -15,6 +16,7 @@ interface Props {
 
 export const VideoPreviewCard = React.memo<Props>(function VideoPreviewCardFn({
   description,
+  preload,
   releaseDate,
   thumbnailLink,
   title,
@@ -29,7 +31,7 @@ export const VideoPreviewCard = React.memo<Props>(function VideoPreviewCardFn({
           controls={true}
           playsInline={true}
           poster={thumbnailLink}
-          preload="auto"
+          preload={preload}
           src={videoLink}
           style={{ backgroundColor: "black" }}
         >
