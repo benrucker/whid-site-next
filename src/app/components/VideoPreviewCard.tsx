@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import React, { MediaHTMLAttributes } from "react";
 import Card from "react-bootstrap/esm/Card";
