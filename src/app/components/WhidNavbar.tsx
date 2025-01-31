@@ -1,10 +1,12 @@
-"use client";
 import classNames from "classnames";
 import Link from "next/link";
 import React from "react";
 import Container from "react-bootstrap/esm/Container";
 import Nav from "react-bootstrap/esm/Nav";
 import Navbar from "react-bootstrap/esm/Navbar";
+import NavbarBrand from "react-bootstrap/esm/NavbarBrand";
+import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
+import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
 import styles from "./WhidNavbar.module.scss";
 
 export const WhidNavbar = React.memo(function WhidNavbarFn({}) {
@@ -16,7 +18,7 @@ export const WhidNavbar = React.memo(function WhidNavbarFn({}) {
       data-bs-theme="dark"
     >
       <Container>
-        <Navbar.Brand href="/">
+        <NavbarBrand href="/">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             aria-label="whid logo"
@@ -25,9 +27,9 @@ export const WhidNavbar = React.memo(function WhidNavbarFn({}) {
             src="/logo-l.svg"
           />
           what have i done
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        </NavbarBrand>
+        <NavbarToggle aria-controls="responsive-navbar-nav" />
+        <NavbarCollapse id="responsive-navbar-nav">
           <Nav className="ms-auto my-1">
             {/* TODO: Make the current page's button text primary color */}
             <Link href="/" className="btn btn-text-primary me-2">
@@ -37,7 +39,7 @@ export const WhidNavbar = React.memo(function WhidNavbarFn({}) {
               href="/dub"
               className="btn btn-text-primary me-2 not-root-nav-item"
             >
-              whidubbed
+              the dub
             </Link>
             <Link
               href="/whyd"
@@ -47,7 +49,7 @@ export const WhidNavbar = React.memo(function WhidNavbarFn({}) {
               <span className={styles.longWhyd}>what have you done</span>
             </Link>
           </Nav>
-        </Navbar.Collapse>
+        </NavbarCollapse>
       </Container>
     </Navbar>
   );
