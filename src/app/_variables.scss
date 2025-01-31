@@ -34,6 +34,11 @@ $link-color: $success;
 $font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
   "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$headings-font-family: "canada-type-gibson", system-ui, -apple-system,
+  "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans",
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+  "Noto Color Emoji";
+$headings-color: $white;
 $h1-font-size: 3rem;
 $h2-font-size: 2.5rem;
 $h3-font-size: 2rem;
@@ -113,11 +118,6 @@ $btn-close-hover-opacity: 1;
 $pre-color: inherit;
 $link-hover-color: darken($link-color, 10%);
 $card-color: $white;
-$headings-font-family: "canada-type-gibson", system-ui, -apple-system,
-  "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans",
-  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-  "Noto Color Emoji";
-$headings-color: $white;
 $card-spacer-y: 0.85rem;
 $card-spacer-x: 1rem;
 $font-weight-bolder: 900;
