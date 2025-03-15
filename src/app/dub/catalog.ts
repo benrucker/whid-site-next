@@ -278,7 +278,7 @@ export const CATALOG: Catalog = {
               timestamp: "6:28",
             },
             {
-              members: "Trent, Wyatt, Ben HJay, James, Kian",
+              members: "Trent, Wyatt, Ben Hay, James, Kian",
               timestamp: "13:14",
             },
             {
