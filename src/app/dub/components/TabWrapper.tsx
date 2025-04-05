@@ -33,7 +33,7 @@ export const TabWrapper = React.memo<Props>(function TabWrapperFn({
 
       <Tab.Content>
         {tabs.map((tab) => (
-          <Tab.Pane key={tab} eventKey={tab} title={tab}>
+          <Tab.Pane key={tab} eventKey={tab}>
             {tabContents[tab]}
           </Tab.Pane>
         ))}

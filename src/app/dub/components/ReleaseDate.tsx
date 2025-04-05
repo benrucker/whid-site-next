@@ -1,4 +1,5 @@
 import React from "react";
+import { getIsReleaseDateInFuture } from "../utils/isEpisodeUnreleased";
 
 interface Props {
   readonly releaseDate: string;
@@ -7,8 +8,7 @@ interface Props {
 export const ReleaseDate = React.memo<Props>(function ReleaseDateFn({
   releaseDate,
 }) {
-  const isReleaseDateInFuture =
-    getDateFromCatalogReleaseDate(releaseDate).getTime() > Date.now();
+  const isReleaseDateInFuture = getIsReleaseDateInFuture(releaseDate);
 
   return (
     <>
@@ -16,10 +16,3 @@ export const ReleaseDate = React.memo<Props>(function ReleaseDateFn({
     </>
   );
 });
-
-function getDateFromCatalogReleaseDate(catalogReleaseDate: string) {
-  const [month, day, year] = catalogReleaseDate.split("/");
-  const date = new Date();
-  date.setFullYear(Number(year), Number(month), Number(day));
-  return date;
-}

@@ -6,6 +6,7 @@ import Card from "react-bootstrap/esm/Card";
 import CardBody from "react-bootstrap/esm/CardBody";
 import { Episode } from "../types/catalogTypes";
 import { SeasonName } from "../types/SeasonName";
+import { isEpisodeUnreleased } from "../utils/isEpisodeUnreleased";
 import { constructThumbnailURL, constructWatchURL } from "../utils/utils";
 import { CardImage } from "./CardImage";
 import { CardImageWithBadge } from "./CardImageWithBadge";
@@ -25,18 +26,26 @@ export const VideoCard = React.memo<Props>(function VideoCardFn({
   imageLoading,
   season,
 }) {
+  const isUnreleased = isEpisodeUnreleased(episode);
+
+  const Component = isUnreleased ? "div" : Link;
+
   return (
-    <Link
+    <Component
       href={constructWatchURL(episode, season)}
       className={classNames("text-decoration-none", className, styles.link)}
     >
-      <Card className={classNames(styles.card, "text-reset")}>
+      <Card
+        className={classNames(styles.card, "text-reset", {
+          [styles.unreleased]: isUnreleased,
+        })}
+      >
         <CardImageWithBadge
           className={styles.image}
           alt={episode.title}
           loading={imageLoading}
           ratio="16x9"
-          src={constructThumbnailURL(episode, season)}
+          src={getEpisodeThumbnail(episode, season)}
           badge={<EpisodeBadge episode={episode} />}
         />
         <CardBody>
@@ -48,6 +57,16 @@ export const VideoCard = React.memo<Props>(function VideoCardFn({
           )}
         </CardBody>
       </Card>
-    </Link>
+    </Component>
   );
 });
+
+function getEpisodeThumbnail(episode: Episode, season: SeasonName) {
+  const isUnreleased = isEpisodeUnreleased(episode);
+
+  if (isUnreleased) {
+    return "/miniwyatt.png";
+  }
+
+  return constructThumbnailURL(episode, season);
+}
