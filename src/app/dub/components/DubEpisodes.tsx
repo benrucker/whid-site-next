@@ -25,7 +25,7 @@ const CONTENTS_BY_TAB = {
         {sortEpisodes(CATALOG.seasons[season].episodes, season).map(
           (episode) => (
             <VideoCard
-              key={episode.title}
+              key={episode.id}
               className="col-md-6 col-lg-3 my-3 mt-1"
               episode={episode}
               season={season}

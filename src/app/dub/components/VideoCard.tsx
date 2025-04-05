@@ -10,6 +10,7 @@ import { constructThumbnailURL, constructWatchURL } from "../utils/utils";
 import { CardImage } from "./CardImage";
 import { CardImageWithBadge } from "./CardImageWithBadge";
 import { EpisodeBadge } from "./EpisodeBadge";
+import { ReleaseDate } from "./ReleaseDate";
 import styles from "./VideoCard.module.scss";
 
 interface Props extends WithClassName {
@@ -41,7 +42,9 @@ export const VideoCard = React.memo<Props>(function VideoCardFn({
         <CardBody>
           <div className="fw-bold text-truncate">{episode.title}</div>
           {episode.releaseDate != null && (
-            <small className="text-muted">Released {episode.releaseDate}</small>
+            <small className="text-muted">
+              <ReleaseDate releaseDate={episode.releaseDate} />
+            </small>
           )}
         </CardBody>
       </Card>
