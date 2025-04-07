@@ -3,9 +3,8 @@ import { Catalog } from "./types/catalogTypes";
 export const CATALOG: Catalog = {
   featured: {
     season: "s2",
-    id: "4",
-    description:
-      '"I\'m not fucking planning another episode of what have i dubbed."\n- Jacob Charles Mallory 2022\n\nAnd then he did anyway.',
+    id: "unset",
+    description: "",
   },
   seasons: {
     s1: {
