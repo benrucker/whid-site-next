@@ -6,8 +6,9 @@ import Card from "react-bootstrap/esm/Card";
 import CardBody from "react-bootstrap/esm/CardBody";
 import { Episode } from "../types/catalogTypes";
 import { SeasonName } from "../types/SeasonName";
+import { getEpisodeThumbnailWithFallback } from "../utils/getEpisodeThumbnailWithFallback";
 import { isEpisodeUnreleased } from "../utils/isEpisodeUnreleased";
-import { constructThumbnailURL, constructWatchURL } from "../utils/utils";
+import { constructWatchURL } from "../utils/utils";
 import { CardImage } from "./CardImage";
 import { CardImageWithBadge } from "./CardImageWithBadge";
 import { EpisodeBadge } from "./EpisodeBadge";
@@ -45,7 +46,7 @@ export const VideoCard = React.memo<Props>(function VideoCardFn({
           alt={episode.title}
           loading={imageLoading}
           ratio="16x9"
-          src={getEpisodeThumbnail(episode, season)}
+          src={getEpisodeThumbnailWithFallback(episode, season)}
           badge={<EpisodeBadge episode={episode} />}
         />
         <CardBody>
@@ -60,13 +61,3 @@ export const VideoCard = React.memo<Props>(function VideoCardFn({
     </Component>
   );
 });
-
-function getEpisodeThumbnail(episode: Episode, season: SeasonName) {
-  const isUnreleased = isEpisodeUnreleased(episode);
-
-  if (isUnreleased) {
-    return "/miniwyatt.png";
-  }
-
-  return constructThumbnailURL(episode, season);
-}

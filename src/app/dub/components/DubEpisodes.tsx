@@ -5,6 +5,7 @@ import Row from "react-bootstrap/esm/Row";
 import { CATALOG } from "../catalog";
 import { SeasonName } from "../types/SeasonName";
 import { sortEpisodes } from "../utils/utils";
+import { FeaturedEpisodeCard } from "./FeaturedEpisodeCard";
 import { TabWrapper } from "./TabWrapper";
 import { VideoCard } from "./VideoCard";
 
@@ -18,23 +19,28 @@ const EPISODE_SEASONS = [
 ];
 
 const CONTENTS_BY_TAB = {
-  Episodes: EPISODE_SEASONS.map((season) => (
-    <Container key={season} className="mt-3">
-      <h3>{CATALOG.seasons[season].name}</h3>
-      <Row className="flex-column-reverse flex-md-row">
-        {sortEpisodes(CATALOG.seasons[season].episodes, season).map(
-          (episode) => (
-            <VideoCard
-              key={episode.id}
-              className="col-md-6 col-lg-3 my-3 mt-1"
-              episode={episode}
-              season={season}
-            />
-          )
-        )}
-      </Row>
+  Episodes: (
+    <Container className="mt-3">
+      <FeaturedEpisodeCard />
+      {EPISODE_SEASONS.map((seasonName) => (
+        <React.Fragment key={seasonName}>
+          <h3>{CATALOG.seasons[seasonName].name}</h3>
+          <Row className="flex-column-reverse flex-md-row">
+            {sortEpisodes(CATALOG.seasons[seasonName].episodes, seasonName).map(
+              (episode) => (
+                <VideoCard
+                  key={episode.id}
+                  className="col-md-6 col-lg-3 my-3 mt-1"
+                  episode={episode}
+                  season={seasonName}
+                />
+              )
+            )}
+          </Row>
+        </React.Fragment>
+      ))}{" "}
     </Container>
-  )),
+  ),
   Extras: (
     <Container key={SeasonName.EXTRAS} className="mt-1">
       <Row className="flex-column-reverse flex-md-row">

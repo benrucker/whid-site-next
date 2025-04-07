@@ -14,7 +14,7 @@ import styles from "./FeaturedContentCard.module.scss";
 interface Props extends WithClassName {
   readonly description?: string;
   readonly href: string;
-  readonly subtitle?: string;
+  readonly subtitle?: React.ReactNode;
   readonly thumbnailGridSize?: number;
   readonly thumbnailUrl: string | StaticImageData;
   readonly title: string;
