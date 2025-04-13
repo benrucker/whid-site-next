@@ -2,9 +2,10 @@ import { Catalog } from "./types/catalogTypes";
 
 export const CATALOG: Catalog = {
   featured: {
-    season: "s2",
-    id: "unset",
-    description: "",
+    season: "extra",
+    id: "jacobs-final-sauce",
+    description:
+      '"I\'m not fucking planning another episode of what have i dubbed."\n- Jacob Charles Mallory 2022\n\nAnd then he did anyway.',
   },
   seasons: {
     s1: {
@@ -287,6 +288,63 @@ export const CATALOG: Catalog = {
           ],
           description:
             '"I\'m not fucking planning another episode of what have i dubbed."\n- Jacob Charles Mallory 2022\n\nAnd then he did anyway.',
+        },
+        {
+          title: "WHIDVANGELION",
+          releaseDate: "4/13/2025",
+          id: "5",
+          episodeNumber: 5,
+          isUnreleased: true,
+          parts: [
+            {
+              members:
+                "Ethan, Wyatt, Chris, Kyle, James, Alex, Yoni, Kian, Juan",
+              timestamp: "0:00",
+            },
+          ],
+        },
+        {
+          title: "Two Piece: The Friends We Made Along The Way",
+          releaseDate: "4/13/2025",
+          id: "6",
+          episodeNumber: 6,
+          isUnreleased: true,
+          parts: [
+            {
+              members:
+                "Ethan, Cayce, Gabe , Josh, Juan, Kyle, Lyn, Sergei, Trent B., Tristan, Wyatt, Markwood, Kian, Ben, Jrod, Jun",
+              timestamp: "0:00",
+            },
+          ],
+        },
+        {
+          title:
+            "Fidler's Requiem: Days of Future Past at the Jelly Donut Convention (A Piano Safety Harness Instructional Video)",
+          releaseDate: "4/13/2025",
+          id: "7",
+          episodeNumber: 7,
+          isUnreleased: true,
+          parts: [
+            {
+              members:
+                "Ben, Kevin, Kian, Markwood, Maska, Neb, Baru, Luq, Yoni, Juan, Wyatt",
+              timestamp: "0:00",
+            },
+          ],
+        },
+        {
+          title: "See You Later.",
+          releaseDate: "4/13/2025",
+          id: "8",
+          episodeNumber: 8,
+          isUnreleased: true,
+          parts: [
+            {
+              members:
+                "Big, Jacob, Jackson, Lyn, Juan, Ross, Cole, Kyle, Tristan, Trent B., Wyattt, Kian, Markwood, Ben",
+              timestamp: "0:00",
+            },
+          ],
         },
       ],
     },
@@ -610,6 +668,36 @@ export const CATALOG: Catalog = {
             },
             { label: "CONCLUSION/MOTIVATION", timestamp: "02:21:24" },
           ],
+        },
+        {
+          title: "Jacob's Final Sauce: Thousand Year Dub War",
+          id: "jacobs-final-sauce",
+          releaseDate: "4/13/2025",
+          isUnreleased: true,
+          parts: [
+            {
+              members:
+                "Ethan, Wyatt, Chris, Kyle, James, Alex, Yoni, Kian, Juan",
+              timestamp: "2:26",
+            },
+            {
+              members:
+                "Ethan, Cayce, Gabe, Josh, Juan, Kyle, Lyn, Sergei, Trent B., Tristan, Wyatt, Markwood, Kian, Ben, Jrod, Jun",
+              timestamp: "35:49",
+            },
+            {
+              members:
+                "Ben, Kevin, Kian, Markwood, Maska, Neb, Baru, Luq, Yoni, Juan, Wyatt",
+              timestamp: "59:18",
+            },
+            {
+              members:
+                "Big, Jacob, Jackson, Lyn, Juan, Ross, Cole, Kyle, Tristan, Trent B., Wyattt, Kian, Markwood, Ben",
+              timestamp: "01:2136",
+            },
+          ],
+          description:
+            "Leave it to the adults, the straw hats become homeless, Ethan crushes the competition, and Jackson questions everything.\n\nA year and several mental breakdowns in the making… this is the grand finale of whidubbed Season 2.",
         },
       ],
     },

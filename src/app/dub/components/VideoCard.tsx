@@ -6,7 +6,7 @@ import Card from "react-bootstrap/esm/Card";
 import CardBody from "react-bootstrap/esm/CardBody";
 import { Episode } from "../types/catalogTypes";
 import { SeasonName } from "../types/SeasonName";
-import { getEpisodeThumbnailWithFallback } from "../utils/getEpisodeThumbnailWithFallback";
+import { getEpisodeThumbnail } from "../utils/getEpisodeThumbnailWithFallback";
 import { isEpisodeUnreleased } from "../utils/isEpisodeUnreleased";
 import { constructWatchURL } from "../utils/utils";
 import { CardImage } from "./CardImage";
@@ -46,7 +46,7 @@ export const VideoCard = React.memo<Props>(function VideoCardFn({
           alt={episode.title}
           loading={imageLoading}
           ratio="16x9"
-          src={getEpisodeThumbnailWithFallback(episode, season)}
+          src={getEpisodeThumbnail(episode, season)}
           badge={<EpisodeBadge episode={episode} />}
         />
         <CardBody>

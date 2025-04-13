@@ -1,9 +1,13 @@
 import { Episode } from "../types/catalogTypes";
 
-export function isEpisodeUnreleased({ releaseDate }: Episode) {
-  if (releaseDate == null) return false;
+export function isEpisodeUnreleased({ releaseDate, isUnreleased }: Episode) {
+  if (isUnreleased == null) {
+    if (releaseDate == null) return false;
 
-  return getIsReleaseDateInFuture(releaseDate);
+    return getIsReleaseDateInFuture(releaseDate);
+  }
+
+  return isUnreleased;
 }
 
 export function getIsReleaseDateInFuture(releaseDate: string) {

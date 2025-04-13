@@ -18,11 +18,13 @@ interface Props extends WithClassName {
   readonly thumbnailGridSize?: number;
   readonly thumbnailUrl: string | StaticImageData;
   readonly title: string;
+  readonly disabled?: boolean;
 }
 
 export const FeaturedContentCard = React.memo<Props>(
   function FeaturedContentCardFn({
     className,
+    disabled = false,
     description,
     href,
     subtitle,
@@ -30,8 +32,10 @@ export const FeaturedContentCard = React.memo<Props>(
     thumbnailUrl,
     title,
   }) {
+    const Component = disabled ? "div" : Link;
+
     return (
-      <Link
+      <Component
         className={classNames(
           "card mb-4 mx-auto text-reset text-decoration-none",
           className
@@ -63,7 +67,7 @@ export const FeaturedContentCard = React.memo<Props>(
             </CardBody>
           </Col>
         </Row>
-      </Link>
+      </Component>
     );
   }
 );

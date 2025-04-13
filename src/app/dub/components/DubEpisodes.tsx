@@ -21,10 +21,10 @@ const EPISODE_SEASONS = [
 const CONTENTS_BY_TAB = {
   Episodes: (
     <Container className="mt-3">
-      <FeaturedEpisodeCard />
+      <FeaturedEpisodeCard className="mb-4" />
       {EPISODE_SEASONS.map((seasonName) => (
         <React.Fragment key={seasonName}>
-          <h3>{CATALOG.seasons[seasonName].name}</h3>
+          <h3 className="pt-2">{CATALOG.seasons[seasonName].name}</h3>
           <Row className="flex-column-reverse flex-md-row">
             {sortEpisodes(CATALOG.seasons[seasonName].episodes, seasonName).map(
               (episode) => (

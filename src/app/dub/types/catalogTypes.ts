@@ -25,6 +25,7 @@ interface BaseEpisode {
   readonly id: string;
   readonly episodeNumber?: number;
   readonly releaseDate?: string;
+  readonly isUnreleased?: boolean;
   readonly title: string;
 }
 
