@@ -673,7 +673,7 @@ export const CATALOG: Catalog = {
           title: "Jacob's Final Sauce: Thousand Year Dub War",
           id: "jacobs-final-sauce",
           releaseDate: "4/13/2025",
-          isUnreleased: true,
+          isUnreleased: false,
           parts: [
             {
               members:
