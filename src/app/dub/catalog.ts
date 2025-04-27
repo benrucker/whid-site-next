@@ -294,7 +294,7 @@ export const CATALOG: Catalog = {
           releaseDate: "4/13/2025",
           id: "5",
           episodeNumber: 5,
-          isUnreleased: true,
+          isUnreleased: false,
           parts: [
             {
               members:
@@ -308,7 +308,7 @@ export const CATALOG: Catalog = {
           releaseDate: "4/13/2025",
           id: "6",
           episodeNumber: 6,
-          isUnreleased: true,
+          isUnreleased: false,
           parts: [
             {
               members:
@@ -323,7 +323,7 @@ export const CATALOG: Catalog = {
           releaseDate: "4/13/2025",
           id: "7",
           episodeNumber: 7,
-          isUnreleased: true,
+          isUnreleased: false,
           parts: [
             {
               members:
@@ -337,7 +337,7 @@ export const CATALOG: Catalog = {
           releaseDate: "4/13/2025",
           id: "8",
           episodeNumber: 8,
-          isUnreleased: true,
+          isUnreleased: false,
           parts: [
             {
               members:
@@ -698,6 +698,11 @@ export const CATALOG: Catalog = {
           ],
           description:
             "Leave it to the adults, the straw hats become homeless, Ethan crushes the competition, and Jackson questions everything.\n\nA year and several mental breakdowns in the making… this is the grand finale of whidubbed Season 2.",
+        },
+        {
+          title: "A Bad Cyberpunk Bingewatch Montage",
+          id: "a-bad-cyberpunk-bingewatch-montage",
+          // releaseDate: "4/26/2025",
         },
       ],
     },
